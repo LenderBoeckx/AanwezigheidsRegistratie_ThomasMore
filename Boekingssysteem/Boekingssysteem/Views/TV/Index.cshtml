@@ -1,0 +1,111 @@
+﻿@model Boekingssysteem.ViewModels.PersoonListViewModel;
+@{
+    ViewData["Title"] = "Screen";
+    int teller = 1;
+    <meta http-equiv="refresh" content="10">
+}
+
+<a class="btn btn-primary btn-lg mb-5" asp-controller="Home" asp-action="AdminView">Terug</a>
+<hr />
+<div class="MainWindowTV">
+    @foreach (var item in Model.Richtingen)
+    {
+        <h2>@item.Naam</h2>
+        <div class="divider"></div>
+        <div class="row">
+            @foreach (var p in Model.Personen)
+            {
+                @if (p.PersoonRichtingen != null)
+                {
+                    @foreach (var item2 in p.PersoonRichtingen)
+                    {
+                        @if (p.PersoonFuncties != null)
+                        {
+                            @while (teller != item.RichtingID)
+                            {
+                                teller++;
+                            }
+                            @if (item2.RichtingID == teller)
+                            {
+                                @*@foreach (var functie in p.PersoonFuncties)
+                                {                                   
+                                    @if (functie.FunctieID >= 3)
+                                    {*@
+                                        @if (p.Aanwezig == true)
+                                        {
+                                            <div class="card text-white bg-success m-3" style="max-width: 18rem;">
+                                                <div class="card-header"><h4>@Html.DisplayFor(modelItem => p.Voornaam) @Html.DisplayFor(modelItem => p.Naam) (Aanwezig)</h4></div>
+                                               
+                                            </div>
+                                        }
+                                        else if (p.Aanwezig == false)
+                                        {
+                                            if (p.Afwezigheden != null)
+                                            {
+                                                foreach (var item3 in p.Afwezigheden)
+                                                {
+                                                    if (item3.Begindatum.Year <= DateTime.Now.Year && item3.Einddatum != null)
+                                                    {
+                                                        <div class="card text-white bg-danger m-3" style="max-width: 18rem;">
+                                                            <div class="card-header"><h4>@Html.DisplayFor(modelItem => p.Voornaam) @Html.DisplayFor(modelItem => p.Naam) (Afwezig)</h4></div>
+                                                            
+                                                        </div>
+                                                    }
+                                                }
+                                            }
+                                            else
+                                            {
+                                                <div class="card text-white bg-danger m-3" style="max-width: 18rem;">
+                                                    <div class="card-header"><h4>@Html.DisplayFor(modelItem => p.Voornaam) @Html.DisplayFor(modelItem => p.Naam) (Afwezig)</h4></div>
+                                                 
+                                                </div>
+                                            }
+                                        }
+                                        else if (p.Aanwezig == null)
+                                        {
+                                            <div class="card text-white bg-warning m-3" style="max-width: 18rem;">
+                                                <div class="card-header"><h4>@Html.DisplayFor(modelItem => p.Voornaam) @Html.DisplayFor(modelItem => p.Naam) (Ongekend)</h4></div>
+                                               
+                                            </div>
+                                        }
+                                  @*  }                                   
+                                }*@
+                                @*@foreach (var functie in p.PersoonFuncties)
+                                {
+                                    @if (functie.FunctieID == 2)
+                                    {
+                                        @if (p.Aanwezig == true)
+                                        {
+                                            <div class="card text-white bg-success m-3" style="max-width: 18rem;">
+                                                <div class="card-header"><h4>@Html.DisplayFor(modelItem => p.Voornaam) @Html.DisplayFor(modelItem => p.Naam) (Aanwezig)</h4></div>
+                                              
+                                            </div>
+                                        }
+                                        else if(p.Afwezigheden != null)
+                                        {
+                                            foreach (var item3 in p.Afwezigheden)
+                                            {
+                                                <div class="card text-white bg-danger m-3" style="max-width: 18rem;">
+                                                    <div class="card-header"><h4>@Html.DisplayFor(modelItem => p.Voornaam) @Html.DisplayFor(modelItem => p.Naam) (Afwezig)</h4></div>
+                                                   
+                                                    </div>                                                                                                                                                    
+                                            }        
+                                        }
+                                        else if (p.Aanwezig == null)
+                                        {
+                                            <div class="card text-white bg-warning m-3" style="max-width: 18rem;">
+                                                <div class="card-header"><h4>@Html.DisplayFor(modelItem => p.Voornaam) @Html.DisplayFor(modelItem => p.Naam) (Ongekend)</h4></div>
+
+                                            </div>
+                                        }
+                                    }
+
+                                }*@
+                            }
+                        }
+                    }
+                }
+            }
+        </div>          
+    }   
+</div>

@@ -1,0 +1,145 @@
+﻿@model Boekingssysteem.ViewModels.PersoonCRUDViewModel
+
+@{
+    ViewData["Title"] = "Toevoegen";
+}
+
+<div class="row mb-5">
+    <a class="btn btn-primary btn-lg mb-5" asp-controller="Persoon" asp-action="Index">Terug</a>
+    <hr />
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong">
+        Personeel lijst
+    </button>
+</div>
+
+@if (Model != null)
+{
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Personeel lijst</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    @if (Model.Personen != null)
+                    {
+                        @foreach (var item in Model.Personen)
+                        {
+                            <table>
+                                <tr>@item.Personeelnummer    </tr>
+                                <tr>@item.Naam    </tr>
+                                <tr>@item.Voornaam    </tr>
+                                <div class="divider mb-5 mt-5"></div>
+                            </table>
+                        }
+                    }
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+<div class="h-100 d-flex align-items-center justify-content-center">
+    <div BtnCrud>
+        <div class="col-sm-12">
+            <div class="mb-5">
+                <form asp-action="Toevoegen">
+                    <div class="@ViewBag.Class @ViewBag.Visibility" role="alert">
+                        Er bestaat al iemand met dit personeelnummer, probeer opnieuw.
+                    </div>
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="form-group row">
+                        <label asp-for="Personeelnummer" class="col-sm-4 col-form-label">Personeelnummer</label>
+                        <div class="col-sm-10">
+                            <input asp-for="Personeelnummer" class="form-control" id="Personeelnummer" placeholder="">
+                            <span asp-validation-for="Personeelnummer" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label asp-for="Voornaam" class="col-sm-4 col-form-label">Voornaam</label>
+                        <div class="col-sm-10">
+                            <input asp-for="Voornaam" class="form-control" id="Voornaam" placeholder="">
+                            <span asp-validation-for="Voornaam" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label asp-for="Naam" class="col-sm-4 col-form-label">Naam</label>
+                        <div class="col-sm-10">
+                            <input asp-for="Naam" class="form-control" id="Naam" placeholder="">
+                            <span asp-validation-for="Naam" class="text-danger"></span>
+                        </div>
+                    </div>
+
+                    <div class="form-group row ">
+                        <div class="col-sm-6">
+                            <h4 class="col-sm-4 col-form-label">Richtingen:</h4>
+                            <ul>
+                                @foreach (var richting in ViewBag.Richtingen)
+                                {
+                                    <li><input type="checkbox" name="RichtingIDs" value="@richting.RichtingID" class="form-check-input" />@richting.Naam</li>
+                                }
+                            </ul>
+                        </div>
+                        <div class="col-sm-6">
+                            <h4 class="col-sm-4 col-form-label">Functies:</h4>
+                            <ul>
+                                @foreach (var functie in ViewBag.Functies)
+                                {
+                                    <li><input type="checkbox" name="FunctieIDs" value="@functie.FunctieID" class="form-check-input" />@functie.Naam</li>
+                                }
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="email" class="col-sm-4 col-form-label">Email</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="email" placeholder="">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="password" class="col-sm-4 col-form-label">Wachtwoord</label>
+                        <div class="col-sm-10">
+                            <input type="password" class="form-control" id="wachtwoord1" placeholder="">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="password" class="col-sm-5 col-form-label">Herhaal wachtwoord</label>
+                        <div class="col-sm-10">
+                            <input type="password" class="form-control  mb-4" id="wachtwoord2" placeholder="">
+                        </div>
+                    </div>
+                    <div class="form-group row mt-2">
+                        <div class="col-sm-2">Admin</div>
+                        <div class="col-sm-10">
+                            <div class="form-check">
+                                <input asp-for="Admin" class="form-check-input" type="checkbox" id="gridCheck1">
+                                <label asp-for="Admin" class="form-check-label" for="gridCheck1">Selecteer om administrator te maken</label>
+                                <span asp-validation-for="Admin" class="text-danger"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <div class="col-sm-10">
+                            <button type="submit" value="Toevoegen" class="btn btn-primary mt-4">Toevoegen</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

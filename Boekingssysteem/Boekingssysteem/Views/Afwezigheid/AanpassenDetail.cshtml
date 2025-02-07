@@ -1,0 +1,91 @@
+﻿@model Boekingssysteem.ViewModels.AfwezigheidCRUDViewModel
+
+@{
+    ViewData["Title"] = "Afwezigheid ingeven";
+}
+
+<div class="row mb-5">
+    <a class="btn btn-primary btn-lg mb-5" asp-controller="Afwezigheid" asp-action="Index">Terug</a>
+    <hr />
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong">
+        Personeel lijst
+    </button>
+</div>
+
+@if (Model != null)
+{
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Personeel lijst</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    @if (Model.Personen != null)
+                    {
+                        @foreach (var item in Model.Personen)
+                        {
+                            <table>
+                                @using (Html.BeginForm("AanpassenDetail", "Afwezigheid", new { @personeelnummer = $"{@item.Personeelnummer}" }, FormMethod.Post))
+                                {
+                                    <input type="submit" class="btn btn-primary btn mb-2" value="@item.Personeelnummer @item.Naam @item.Voornaam">
+                                }
+                                <div class="divider mb-5 mt-5"></div>
+                            </table>
+                        }
+                    }
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+<div class="h-100 d-flex align-items-center justify-content-center">
+    <div BtnCrud>
+        <div class="col-sm-12">
+            <div class="mb-5">
+                <form asp-action="AanpassenDetail">
+                    <div class="@ViewBag.Class @ViewBag.Visibility" role="alert">
+                        @ViewBag.Message
+                    </div>
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <input type="hidden" asp-for="AfwezigheidID" />
+                    <input type="hidden" asp-for="Personeelnummer" />
+                    <div class="form-group row">
+                        <label asp-for="Begindatum" class="col-sm-4 col-form-label">Begindatum</label>
+                        <div class="col-sm-10">
+                            <input class="form-control" type"date" data-val="true" asp-for="Begindatum" />
+                            <span asp-validation-for="Begindatum" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label asp-for="Einddatum" class="col-sm-4 col-form-label">EindDatum</label>
+                        <div class="col-sm-10">
+                            <input class="form-control" type"date" data-val="true" asp-for="Einddatum" />
+                            <span asp-validation-for="Einddatum" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-sm-10">
+                            <button type="submit" value="Aanpassen" class="btn btn-primary mt-4">Aanpassen</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
+

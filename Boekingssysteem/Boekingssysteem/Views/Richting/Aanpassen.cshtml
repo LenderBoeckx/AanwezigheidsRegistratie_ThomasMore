@@ -1,0 +1,25 @@
+﻿@model Boekingssysteem.ViewModels.RichtingCRUDViewModel
+
+@{
+    ViewData["Title"] = "Aanpassen";
+}
+
+<a class="btn btn-primary btn-lg mb-5" asp-controller="Richting" asp-action="Index">Terug</a>
+<hr />
+
+<form asp-action="Aanpassen">
+    <input type="hidden" asp-for="RichtingID" />
+    <div class="row mt-5">
+        <div asp-validation-summary="ModelOnly" class="text-danger" />
+        <div class="col-md-6">
+            <div class="form-group">
+                <label asp-for="Naam" class="control-label">@Html.DisplayNameFor(model => this.Model.Naam)</label>
+                <input asp-for="Naam" class="form-control" />
+                <span asp-validation-for="Naam" class="text-danger"></span>
+                <div class="form-group ml-2">
+                    <input type="submit" value="Aanpassen" class="btn btn-primary mt-2 mb-2" />
+                </div>
+            </div>
+        </div>        
+    </div>
+</form>

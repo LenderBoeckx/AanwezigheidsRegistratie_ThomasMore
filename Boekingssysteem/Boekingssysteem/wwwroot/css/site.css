@@ -1,0 +1,161 @@
+﻿html {
+    font-size: 14px;
+    box-sizing: border-box;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    margin-bottom: 60px;
+}
+
+.MainWindow {
+    margin-top: 75px;
+}
+
+/*Homepagina*/
+.HeaderImg {
+    width: 350px;
+    margin: auto;
+}
+
+.BtnHome {
+    text-align: center;
+}
+
+.btn {
+    width: 250px;
+    background-color: #fa6432;
+    border-color: #fa6432;
+    margin: auto;
+}
+
+    .btn:visited, .btn:active, .btn:hover {
+        background-color: #fa6432;
+        border-color: #fa6432;
+    }
+
+.ActionButtonHome {
+    padding-top: 75px;
+    width: 70%;
+}
+
+/*Statuspagina*/
+.themed-grid-col {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    background-color: rgba(86, 61, 124, .15);
+    border: 1px solid rgba(86, 61, 124, .2);
+}
+
+.divider {
+    background-color: #fa6432;
+    width: 100%;
+    height: 2px;
+}
+/*TV pagina*/
+table {
+    width: 100%;
+    table-layout: fixed;
+}
+
+tr:nth-child(even) {
+    background-color: #D6EEEE !important;
+}
+
+/*Status pagina - input*/
+.checkbox {
+    -moz-appearance: none;
+    appearance: none;
+    position: relative;
+    display: inline-block;
+    background: red;
+    height: 1.65rem;
+    width: 2.75rem;
+    vertical-align: middle;
+    border-radius: 2rem;
+    box-shadow: 0px 1px 3px #0003 inset;
+    transition: 0.25s linear background;
+    scale: 1.3;
+}
+
+    .checkbox::before {
+        content: '';
+        display: block;
+        width: 1.25rem;
+        height: 1.25rem;
+        background: #fff;
+        border-radius: 1.2rem;
+        position: absolute;
+        top: 0.2rem;
+        left: 0.2rem;
+        box-shadow: 0px 1px 3px #0003;
+        transition: 0.25s linear transform;
+        transform: translateX(0rem)
+    }
+
+:checked {
+    background: green;   
+}
+
+    :checked::before {
+        transform: translateX(1rem)
+    }
+
+
+.checkbox:focus-visible {
+    outline: 2px solid dodgerblue;
+    outline-offset: 2px
+}
+
+.disabledTM {
+    pointer-events: none;
+    background-color: #A9A9A9;
+}
+
+.card {
+    display: inline-block;
+}
+
+.MainWindowTV{
+    width:100%;
+}
+
+.pAanwezig{
+color: green;
+font-size:30px;
+}
+
+.pAfwezig {
+    color: red;
+    font-size: medium;
+}
+
+.pOngekend {
+    color: yellow;
+    font-size: medium;
+}
+
+.login {
+  /*  margin-left: auto;
+    margin-right: 0;*/
+    float: right;
+}
+
+.bg {
+    background-image: url("/images/Moonwhale.jpg");
+    height: 100%;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}

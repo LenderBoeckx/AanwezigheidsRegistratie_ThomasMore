@@ -1,0 +1,14 @@
+﻿@model Boekingssysteem.ViewModels.GebruikerDetailsViewModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Gebruiker informatie</h1>
+
+<p> Personeelnummer: @Model.Personeelnummer</p>
+<p> Naam: @Model.Naam</p>
+<p> Voornaam: @Model.Voornaam</p>
+<p> Email: @Model.UserName</p>
+
+<a class="btn btn-primary mb-5 mt-5" asp-action="Index">Terug</a>

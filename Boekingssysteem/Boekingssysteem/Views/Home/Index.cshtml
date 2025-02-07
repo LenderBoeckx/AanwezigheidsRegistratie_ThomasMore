@@ -1,0 +1,55 @@
+﻿@model Boekingssysteem.ViewModels.PersoonCRUDViewModel
+@using Microsoft.AspNetCore.Hosting
+@using Microsoft.AspNetCore.Mvc.ViewEngines
+@inject IWebHostEnvironment Environment
+@inject ICompositeViewEngine Engine
+@{
+    ViewData["Title"] = "Home";
+}
+
+<div class="MainWindow">
+    <div class="col-md-12">
+        @using (Html.BeginForm("Index", "Home", FormMethod.Post))
+        {                       
+                <div class="col">
+                    <div asp-validation-summary="ModelOnly"></div>
+                    <div class="form-group">
+                        <label asp-for="Personeelnummer" for="text" class="form-label">Personeelnummer</label>
+                        <div class="col">
+                            @Html.TextBoxFor(s => s.Personeelnummer, new {@class = "form-control", @placeholder = "R-nummer"})
+                        </div>
+                        <div>
+                            <span asp-validation-for="Personeelnummer" class="text-danger"></span>
+                        </div>
+                    <label asp-for="Wachtwoord" for="password" class="col-sm-4 col-form-label">Wachtwoord</label>
+                    <div class="col">
+                        @Html.TextBoxFor(s => s.Wachtwoord, new {@class = "form-control", @type = "password", @placeholder = "Uw wachtwoord"})
+                    </div>
+                    <div>
+                        <span asp-validation-for="Wachtwoord" class="text-danger"></span>
+                    </div>
+                        <div asp-validation-summary="ModelOnly"></div>
+
+                    
+                    </div>
+                </div>
+                <div class="BtnHome">
+                    <hr class="mb-4">
+                    <input type="submit" class="btn btn-primary btn-lg mb-2" value="Inloggen">
+                </div>            
+        }
+                               
+        <div class="ActionButtonHome">
+            <a class="btn btn-primary btn-lg mb-2" asp-action="WachtwoordVergetenView">
+                Wachtwoord vergeten
+            </a>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
+

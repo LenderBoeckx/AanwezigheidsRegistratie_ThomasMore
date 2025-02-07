@@ -1,0 +1,116 @@
+﻿@model Boekingssysteem.ViewModels.PersoonCRUDViewModel
+@{
+    ViewData["Title"] = "Aanwezigheid aanpassen admin";
+}
+
+<div class="row mb-5">
+    @if (Context.User.IsInRole("admin"))
+    {
+        <a class="btn btn-primary btn-lg mb-5" asp-controller="Status" asp-action="Index">Terug</a>
+    }
+    else
+    {
+        <a class="btn btn-primary btn-lg mb-5" asp-controller="Home" asp-action="AdminView">Terug</a>
+    }   
+    <hr />
+    @if (Context.User.IsInRole("admin"))
+    {
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong">
+            Personeel lijst
+        </button>
+    }   
+</div>
+
+@if (Model != null)
+{
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Personeellijst</h5>
+                    <button type="button" class="close @ViewBag.Visibility" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    @if (Model.Personen != null)
+                    {
+                        @foreach (var item in Model.Personen)
+                        {
+                            <table>
+                                @using (Html.BeginForm("StatusData", "Status", new { @personeelnummer = $"{@item.Personeelnummer}" }, FormMethod.Post))
+                                {
+                                    <input type="submit" class="btn btn-primary btn mb-2" value="@item.Personeelnummer @item.Naam @item.Voornaam">
+                                }                                                    
+                                <div class="divider mb-5 mt-5"></div>
+                            </table>
+                        }
+                    }
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+<div class="h-100 d-flex align-items-center justify-content-center">
+    <div class="col">
+        <div asp-validation-summary="All" class="text-danger"></div>
+        @using (Html.BeginForm("StatusData", "Status", FormMethod.Post))
+        {            
+            <form>
+                <div class="col">
+                    <div class="mb-5">
+                        <div class="form-group">
+                            <label class="mr-3">Personeelsnummer: </label>
+                            @Html.TextBoxFor(s => s.Personeelnummer, new {@class = "form-control mb-3", @placeholder = ""})
+                            <input type="submit" value="Gebruiker zoeken" class="btn btn-primary mb-2" />
+                            <span asp-validation-for="Personeelnummer" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="PersoneelInfo">
+                        <div class="col">
+                            <div class="row">
+                                <p>Naam: @ViewBag.naam</p>
+                            </div>
+                            <div class="row">
+                                <p>Voornaam: @ViewBag.voornaam</p>
+
+                            </div>
+                            <div class="row">
+                                <p>Personeelnummer: @ViewBag.personeelnummer</p>
+                            </div>
+                            <div class="row">
+                                @if (ViewBag.Aanwezig == null)
+                                {
+                                    <p>Status: Ongekend</p>
+                                }
+                                else if (ViewBag.Aanwezig == true)
+                                {
+                                    <p>Status: Aanwezig</p>
+                                }
+                                else
+                                {
+                                    <p>Status: Afwezig</p>
+                                }
+                            </div>
+                        </div>
+                    </div>
+                </div>                
+            </form>
+        }       
+        <div class="row">
+            <div>
+                @using (Html.BeginForm("AanpassenViaId", "Status", new { @personeelnummer = $"{@ViewBag.personeelnummer}" }, FormMethod.Post))
+                {
+                    <div class="mt-5 mr-5">
+                        <input type="submit" class="btn btn-primary btn-lg mb-2" value="Status aanpassen">
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,146 @@
+﻿@model Boekingssysteem.ViewModels.PersoonCRUDViewModel
+@{
+    ViewData["Title"] = "Aanpassen";
+}
+
+<div class="row mb-5">
+    <a class="btn btn-primary btn-lg mb-5" asp-controller="Gebruiker" asp-action="Index">Terug</a>
+    <hr />
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong">
+        Personeel lijst
+    </button>
+</div>
+
+@if (Model != null)
+{
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Personeellijst</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    @if (Model.Personen != null)
+                    {
+                        @foreach (var item in Model.Personen)
+                        {
+                            <table>
+                                @using (Html.BeginForm("Aanpassen", "Persoon", new { @personeelnummer = $"{@item.Personeelnummer}" }, FormMethod.Post))
+                                {
+                                    <input type="submit" class="btn btn-primary btn mb-2" value="@item.Personeelnummer @item.Naam @item.Voornaam">
+                                }
+                                <div class="divider mb-5 mt-5"></div>
+                            </table>
+                        }
+                    }
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+<div class="h-100 d-flex align-items-center justify-content-center">
+    <div BtnCrud>
+        <div class="col-sm-12">
+            <div class="mb-5">
+                @using (Html.BeginForm())
+                {
+                    @Html.TextBoxFor(s => s.Personeelnummer)
+                    <input class="btn btn-primary mb-2" type="submit" value="Zoek adhv personeelsnummer" />
+                    <div> <span asp-validation-for="Personeelnummer" class="text-danger"></span></div>
+                }
+            </div>
+            <div class="@ViewBag.Class @ViewBag.Visibility" role="alert">
+                @ViewBag.Message
+            </div>
+            <div class="mb-5">
+                @using (Html.BeginForm("AanpassenDetail", "Persoon", FormMethod.Post))
+                {
+                    <form asp-action="AanpassenDetail">
+                        <div asp-validation-summary="ModelOnly"></div>
+                        <div class="form-group row">
+                            <label asp-for="Personeelnummer" for="text" class="col-sm-4 col-form-label">Personeelnummer</label>
+                            <div class="col-sm-10">
+                                <input asp-for="Personeelnummer" type="text" class="form-control disabledTM" id="personeelnummer" placeholder="">
+                            </div>
+                            <span asp-validation-for="Personeelnummer" class="text-danger"></span>
+                        </div>
+                        <div class="form-group row">
+                            <label asp-for="Naam" for="text" class="col-sm-4 col-form-label">Naam</label>
+                            <div class="col-sm-10">
+                                <input asp-for="Naam" type="text" class="form-control" id="naam" placeholder="">
+                            </div>
+                            <span asp-validation-for="Naam" class="text-danger"></span>
+                        </div>
+                        <div class="form-group row">
+                            <label asp-for="Voornaam" for="text" class="col-sm-4 col-form-label">Voornaam</label>
+                            <div class="col-sm-10">
+                                <input asp-for="Voornaam" type="text" class="form-control" id="voornaam" placeholder="">
+                            </div>
+                            <span asp-validation-for="Voornaam" class="text-danger"></span>
+                        </div>
+                        <div class="form-group row">                        
+                            <div class="col-sm-10">
+                                <input asp-for="Wachtwoord" type="hidden" class="form-control disabledTM" id="Wachtwoord" placeholder="">
+                            </div>
+                        
+                        </div>
+                        <div class="form-group row ">
+                            <div class="col-sm-6">
+                                <h4 class="col-sm-4 col-form-label">Richtingen:</h4>
+                                <ul>
+                                    @foreach (var richting in ViewBag.Richtingen)
+                                    {
+                                        <li><input type="checkbox" name="RichtingIDs" value="@richting.RichtingID" class="form-check-input" />@richting.Naam</li>
+                                    }
+                                </ul>
+                            </div>
+                            <div class="col-sm-6">
+                                <h4 class="col-sm-4 col-form-label">Functies:</h4>
+                                <ul>
+                                    @foreach (var functie in ViewBag.Functies)
+                                    {
+                                        <li><input type="checkbox" name="FunctieIDs" value="@functie.FunctieID" class="form-check-input" />@functie.Naam</li>
+                                    }
+                                </ul>
+                            </div>
+                        </div>  
+                        
+                        @*<input asp-for=Admin type="hidden" value="@Model.Admin" />*@
+                        
+                        @*<div class="form-group row mt-2">
+                            <div class="col-sm-2">Admin</div>
+                            <div class="col-sm-10">
+                                <div class="form-check">
+                                    <input asp-for="Admin" class="form-check-input" type="checkbox" id="gridCheck1">
+                                    <label asp-for="Admin" class="form-check-label" for="gridCheck1">
+                                        Selecteer om administrator te maken
+                                    </label>
+                                </div>
+                            </div>
+                        </div>*@
+
+                        <div class="form-group row">
+                            <div class="col-sm-10">
+                                <button type="submit" value="Save" class="btn btn-primary mt-4">Wijzigen</button>
+                            </div>
+                        </div>
+                    </form>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

@@ -1,0 +1,102 @@
+﻿@model Boekingssysteem.ViewModels.PersoonListViewModel
+@using Microsoft.AspNetCore.Identity
+@using Boekingssysteem.Areas.Identity.Data
+
+@inject SignInManager<CustomUser> SignInManager
+@inject UserManager<CustomUser> UserManager
+@{
+    ViewData["Title"] = "Registratie aanwezigheid";
+    <meta http-equiv="refresh" content="10">
+}
+
+@if (SignInManager.IsSignedIn(User))
+{
+    <a class="btn btn-primary btn-lg mb-5" asp-controller="Home" asp-action="AdminView">Terug</a>
+}
+else
+{
+    <a class="btn btn-primary btn-lg mb-5" asp-controller="Home" asp-action="GebruikerView">Terug</a>
+}   
+
+<hr />
+<div class="StatusWindow">
+    <div class="container">
+        <div class="mb-5">
+            @if (Context.User.IsInRole("admin"))
+            {
+                <a asp-controller="Status" asp-action="StatusAdmin" class="btn btn-primary btn-lg mb-2" role="button">Aanwezigheid aanpassen</a>
+            }            
+        </div>                   
+            @foreach (var p in Model.Personen)
+            {
+            @using (Html.BeginForm("Aanpassen", "Status", new { @personeelnummer = $"{p.Personeelnummer}" }, FormMethod.Post))
+            {
+                <div class="row">
+                    <div class="col">
+                        @Html.DisplayFor(modelItem => p.Naam)
+                        @Html.DisplayFor(modelItem => p.Voornaam)
+                    </div>
+
+                    @if (p.PersoonRichtingen == null)
+                    {
+                        <div class="col">Geen richting</div>
+                    }
+                    else
+                    {
+
+                        <div class="col">
+
+                            @foreach (var item in p.PersoonRichtingen)
+                            {
+                                @Html.DisplayFor(modelItem => item.Richting.Naam) <br>
+                            }
+
+                            @if (p.Admin)
+                            {
+                                <p>Administratief personeel</p>
+                            }
+                            else
+                            {
+                                <p>Leerkracht</p>
+                            }
+                        </div>
+                    }
+
+                    <div class="row">
+                        <div class="col">
+                            @if (p.Aanwezig == true)
+                            {
+                                <p style="color: green; font-size:20px">Aanwezig</p>
+                            }
+                            else if (p.Aanwezig == false)
+                            {
+                                <p style="color: red; font-size:20px">Afwezig</p>
+                            }
+                            else
+                            {
+                                <p style="color: #e6b400; font-size:20px">Ongekend</p>
+                            }
+                        </div>
+
+                        <div class="col">
+                            <form>
+                                @using (Html.BeginForm("AanpassenViaId", "Status", new { @personeelnummer = $"{@p.Personeelnummer}" }, FormMethod.Post))
+                                {
+                                <div asp-validation-summary="ModelOnly"></div>                                
+                                <input type="submit" class="btn btn-primary btn-lg mb-2" value="Status aanpassen">                                                                
+                                }
+                            </form>
+                        </div>                   
+                    </div>
+                </div>
+                <div class="divider mt-5 mb-5"></div>
+            }
+        }          
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

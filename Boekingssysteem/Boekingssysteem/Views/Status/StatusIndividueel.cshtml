@@ -1,0 +1,42 @@
+﻿@model Boekingssysteem.ViewModels.PersoonCRUDViewModel
+@{
+    ViewData["Title"] = "Aanwezigheid aanpassen";
+}
+
+<div class="row mb-5">
+    <a class="btn btn-primary btn-lg mb-5" asp-controller="Home" asp-action="AdminView">Terug</a>
+</div>
+
+<form asp-action="StatusIndividueel">
+    <div class="PersoneelInfo">
+        <div class="col">
+            <div class="row">
+                <p>Naam: @Model.Naam</p>
+            </div>
+            <div class="row">
+                <p>Voornaam: @Model.Voornaam</p>
+            </div>
+            <div class="row">
+                <p>Personeelnummer: @Model.Personeelnummer</p>
+            </div>
+            <div class="row">
+                @if (@Model.Aanwezig == null)
+                {
+                    <p>Status: Ongekend</p>
+                }
+                else if (@Model.Aanwezig == true)
+                {
+                    <p>Status: Aanwezig</p>
+                }
+                else
+                {
+                    <p>Status: Afwezig</p>
+                }
+            </div>
+        </div>
+    </div>    
+    
+    <div class="form-group">
+        <input type="submit" value="Status veranderen" class="btn btn-primary" />
+    </div>
+</form>

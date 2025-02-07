@@ -1,0 +1,75 @@
+﻿﻿﻿@using Microsoft.AspNetCore.Identity
+@using Boekingssysteem.Areas.Identity.Data
+
+@inject SignInManager<CustomUser> SignInManager
+@inject UserManager<CustomUser> UserManager
+
+@{
+    ViewData["Title"] = "Admin scherm";
+}
+
+
+
+<div class="h-100 d-flex align-items-center justify-content-center">
+    <div BtnCrud>
+        <div class="col">
+            <div class="row">
+                @if (Context.User.IsInRole("admin"))
+                {
+                    <div class="mb-4 mx-2">
+                        <h5>Aanwezig/afwezig melden</h5>
+                        <a asp-controller="Status" asp-action="Index" class="btn btn-primary btn-lg mb-2" role="button">Status pagina</a>
+                    </div>
+                }
+                else
+                {
+                    <div class="mb-4 mx-2">
+                        <h5>Aanwezig/afwezig melden</h5>
+                        <a asp-controller="Status" asp-action="StatusIndividueel" class="btn btn-primary btn-lg mb-2" role="button">Status pagina</a>
+                    </div>
+                }
+                <div class="mb-4 mx-2">
+                    <h5>Toont het tv scherm</h5>
+                    <a asp-controller="TV" asp-action="Index" class="btn btn-primary btn-lg mb-2" role="button">TV pagina</a>
+                </div>
+                <div class="mb-4 mx-2">
+                    @if (Context.User.IsInRole("admin"))
+                    {
+                        <h5>Personeel beheren</h5>
+                        <a asp-controller="Gebruiker" asp-action="Index" class="btn btn-primary btn-lg mb-2" role="button">Admin pagina</a>
+                    }
+                </div>
+            </div>
+            <div class="row">
+                <div class="mb-4">
+                    @*@if (Context.User.IsInRole(""))
+                    {*@
+                    @* <p>creëer/update/delete Personeel</p>*@
+                    @*<a asp-controller="Persoon" asp-action="Index" class="btn btn-primary btn-lg mb-2" role="button">Personen</a>*@
+                    @* }  *@
+                </div>
+                <div class="mb-4 mx-2">
+                    @if (Context.User.IsInRole("admin"))
+                    {
+                        <h5>Nieuwe functie aanmaken</h5>
+                        <a asp-controller="Functie" asp-action="Index" class="btn btn-primary btn-lg mb-2" role="button">Functies</a>
+                    }
+                </div>
+                <div class="mb-4 mx-2">
+                    @if (Context.User.IsInRole("admin"))
+                    {
+                        <h5>Nieuwe richting aanmaken</h5>
+                        <a asp-controller="Richting" asp-action="Index" class="btn btn-primary btn-lg mb-2" role="button">Richtingen</a>
+                    }
+                </div>
+                <div class="mb-4 mx-2">
+                    @if (Context.User.IsInRole("admin"))
+                    {
+                        <h5>Afwezigheden melden</h5>
+                        <a asp-controller="Afwezigheid" asp-action="Index" class="btn btn-primary btn-lg mb-2" role="button">Afwezigheden</a>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

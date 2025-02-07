@@ -1,0 +1,149 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\lende\\Documents\\thomasmore\\jaar 2\\projecten van het werkveld\\project\\Boekingssysteem\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{B55AC059-114B-4A93-8CEE-B252152AD98C}|Boekingssysteem\\Boekingssysteem.csproj|c:\\users\\lende\\documents\\thomasmore\\jaar 2\\projecten van het werkveld\\project\\boekingssysteem\\boekingssysteem\\controllers\\persooncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B55AC059-114B-4A93-8CEE-B252152AD98C}|Boekingssysteem\\Boekingssysteem.csproj|solutionrelative:boekingssysteem\\controllers\\persooncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B55AC059-114B-4A93-8CEE-B252152AD98C}|Boekingssysteem\\Boekingssysteem.csproj|c:\\users\\lende\\documents\\thomasmore\\jaar 2\\projecten van het werkveld\\project\\boekingssysteem\\boekingssysteem\\views\\persoon\\aanpassen.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B55AC059-114B-4A93-8CEE-B252152AD98C}|Boekingssysteem\\Boekingssysteem.csproj|solutionrelative:boekingssysteem\\views\\persoon\\aanpassen.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B55AC059-114B-4A93-8CEE-B252152AD98C}|Boekingssysteem\\Boekingssysteem.csproj|c:\\users\\lende\\documents\\thomasmore\\jaar 2\\projecten van het werkveld\\project\\boekingssysteem\\boekingssysteem\\viewmodels\\persooncrudviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B55AC059-114B-4A93-8CEE-B252152AD98C}|Boekingssysteem\\Boekingssysteem.csproj|solutionrelative:boekingssysteem\\viewmodels\\persooncrudviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B55AC059-114B-4A93-8CEE-B252152AD98C}|Boekingssysteem\\Boekingssysteem.csproj|c:\\users\\lende\\documents\\thomasmore\\jaar 2\\projecten van het werkveld\\project\\boekingssysteem\\boekingssysteem\\views\\home\\adminview.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B55AC059-114B-4A93-8CEE-B252152AD98C}|Boekingssysteem\\Boekingssysteem.csproj|solutionrelative:boekingssysteem\\views\\home\\adminview.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B55AC059-114B-4A93-8CEE-B252152AD98C}|Boekingssysteem\\Boekingssysteem.csproj|c:\\users\\lende\\documents\\thomasmore\\jaar 2\\projecten van het werkveld\\project\\boekingssysteem\\boekingssysteem\\views\\gebruiker\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B55AC059-114B-4A93-8CEE-B252152AD98C}|Boekingssysteem\\Boekingssysteem.csproj|solutionrelative:boekingssysteem\\views\\gebruiker\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B55AC059-114B-4A93-8CEE-B252152AD98C}|Boekingssysteem\\Boekingssysteem.csproj|c:\\users\\lende\\documents\\thomasmore\\jaar 2\\projecten van het werkveld\\project\\boekingssysteem\\boekingssysteem\\views\\richting\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B55AC059-114B-4A93-8CEE-B252152AD98C}|Boekingssysteem\\Boekingssysteem.csproj|solutionrelative:boekingssysteem\\views\\richting\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B55AC059-114B-4A93-8CEE-B252152AD98C}|Boekingssysteem\\Boekingssysteem.csproj|c:\\users\\lende\\documents\\thomasmore\\jaar 2\\projecten van het werkveld\\project\\boekingssysteem\\boekingssysteem\\views\\persoon\\toevoegen.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B55AC059-114B-4A93-8CEE-B252152AD98C}|Boekingssysteem\\Boekingssysteem.csproj|solutionrelative:boekingssysteem\\views\\persoon\\toevoegen.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B55AC059-114B-4A93-8CEE-B252152AD98C}|Boekingssysteem\\Boekingssysteem.csproj|c:\\users\\lende\\documents\\thomasmore\\jaar 2\\projecten van het werkveld\\project\\boekingssysteem\\boekingssysteem\\views\\functie\\toevoegen.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B55AC059-114B-4A93-8CEE-B252152AD98C}|Boekingssysteem\\Boekingssysteem.csproj|solutionrelative:boekingssysteem\\views\\functie\\toevoegen.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "PersoonController.cs",
+              "DocumentMoniker": "C:\\Users\\lende\\Documents\\thomasmore\\jaar 2\\projecten van het werkveld\\project\\Boekingssysteem\\Boekingssysteem\\Controllers\\PersoonController.cs",
+              "RelativeDocumentMoniker": "Boekingssysteem\\Controllers\\PersoonController.cs",
+              "ToolTip": "C:\\Users\\lende\\Documents\\thomasmore\\jaar 2\\projecten van het werkveld\\project\\Boekingssysteem\\Boekingssysteem\\Controllers\\PersoonController.cs",
+              "RelativeToolTip": "Boekingssysteem\\Controllers\\PersoonController.cs",
+              "ViewState": "AgIAACYAAAAAAAAAAAAQwI0AAABMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-04T12:16:28.365Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "PersoonCRUDViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\lende\\Documents\\thomasmore\\jaar 2\\projecten van het werkveld\\project\\Boekingssysteem\\Boekingssysteem\\ViewModels\\PersoonCRUDViewModel.cs",
+              "RelativeDocumentMoniker": "Boekingssysteem\\ViewModels\\PersoonCRUDViewModel.cs",
+              "ToolTip": "C:\\Users\\lende\\Documents\\thomasmore\\jaar 2\\projecten van het werkveld\\project\\Boekingssysteem\\Boekingssysteem\\ViewModels\\PersoonCRUDViewModel.cs",
+              "RelativeToolTip": "Boekingssysteem\\ViewModels\\PersoonCRUDViewModel.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAQwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-04T12:14:38.721Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Aanpassen.cshtml",
+              "DocumentMoniker": "C:\\Users\\lende\\Documents\\thomasmore\\jaar 2\\projecten van het werkveld\\project\\Boekingssysteem\\Boekingssysteem\\Views\\Persoon\\Aanpassen.cshtml",
+              "RelativeDocumentMoniker": "Boekingssysteem\\Views\\Persoon\\Aanpassen.cshtml",
+              "ToolTip": "C:\\Users\\lende\\Documents\\thomasmore\\jaar 2\\projecten van het werkveld\\project\\Boekingssysteem\\Boekingssysteem\\Views\\Persoon\\Aanpassen.cshtml",
+              "RelativeToolTip": "Boekingssysteem\\Views\\Persoon\\Aanpassen.cshtml",
+              "ViewState": "AgIAAC0AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-02-04T12:12:54.932Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "AdminView.cshtml",
+              "DocumentMoniker": "C:\\Users\\lende\\Documents\\thomasmore\\jaar 2\\projecten van het werkveld\\project\\Boekingssysteem\\Boekingssysteem\\Views\\Home\\AdminView.cshtml",
+              "RelativeDocumentMoniker": "Boekingssysteem\\Views\\Home\\AdminView.cshtml",
+              "ToolTip": "C:\\Users\\lende\\Documents\\thomasmore\\jaar 2\\projecten van het werkveld\\project\\Boekingssysteem\\Boekingssysteem\\Views\\Home\\AdminView.cshtml",
+              "RelativeToolTip": "Boekingssysteem\\Views\\Home\\AdminView.cshtml",
+              "ViewState": "AgIAACcAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-02-04T12:12:39.148Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Details.cshtml",
+              "DocumentMoniker": "C:\\Users\\lende\\Documents\\thomasmore\\jaar 2\\projecten van het werkveld\\project\\Boekingssysteem\\Boekingssysteem\\Views\\Gebruiker\\Details.cshtml",
+              "RelativeDocumentMoniker": "Boekingssysteem\\Views\\Gebruiker\\Details.cshtml",
+              "ToolTip": "C:\\Users\\lende\\Documents\\thomasmore\\jaar 2\\projecten van het werkveld\\project\\Boekingssysteem\\Boekingssysteem\\Views\\Gebruiker\\Details.cshtml",
+              "RelativeToolTip": "Boekingssysteem\\Views\\Gebruiker\\Details.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-02-04T12:12:18.432Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\lende\\Documents\\thomasmore\\jaar 2\\projecten van het werkveld\\project\\Boekingssysteem\\Boekingssysteem\\Views\\Richting\\Index.cshtml",
+              "RelativeDocumentMoniker": "Boekingssysteem\\Views\\Richting\\Index.cshtml",
+              "ToolTip": "C:\\Users\\lende\\Documents\\thomasmore\\jaar 2\\projecten van het werkveld\\project\\Boekingssysteem\\Boekingssysteem\\Views\\Richting\\Index.cshtml",
+              "RelativeToolTip": "Boekingssysteem\\Views\\Richting\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-02-04T12:11:58.926Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Toevoegen.cshtml",
+              "DocumentMoniker": "C:\\Users\\lende\\Documents\\thomasmore\\jaar 2\\projecten van het werkveld\\project\\Boekingssysteem\\Boekingssysteem\\Views\\Persoon\\Toevoegen.cshtml",
+              "RelativeDocumentMoniker": "Boekingssysteem\\Views\\Persoon\\Toevoegen.cshtml",
+              "ToolTip": "C:\\Users\\lende\\Documents\\thomasmore\\jaar 2\\projecten van het werkveld\\project\\Boekingssysteem\\Boekingssysteem\\Views\\Persoon\\Toevoegen.cshtml",
+              "RelativeToolTip": "Boekingssysteem\\Views\\Persoon\\Toevoegen.cshtml",
+              "ViewState": "AgIAABgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-02-04T12:11:46.292Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Toevoegen.cshtml",
+              "DocumentMoniker": "C:\\Users\\lende\\Documents\\thomasmore\\jaar 2\\projecten van het werkveld\\project\\Boekingssysteem\\Boekingssysteem\\Views\\Functie\\Toevoegen.cshtml",
+              "RelativeDocumentMoniker": "Boekingssysteem\\Views\\Functie\\Toevoegen.cshtml",
+              "ToolTip": "C:\\Users\\lende\\Documents\\thomasmore\\jaar 2\\projecten van het werkveld\\project\\Boekingssysteem\\Boekingssysteem\\Views\\Functie\\Toevoegen.cshtml",
+              "RelativeToolTip": "Boekingssysteem\\Views\\Functie\\Toevoegen.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-02-04T12:11:31.981Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

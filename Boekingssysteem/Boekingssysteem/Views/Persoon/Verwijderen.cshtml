@@ -1,0 +1,90 @@
+﻿@model Boekingssysteem.ViewModels.PersoonCRUDViewModel
+@{
+    ViewData["Title"] = "Verwijderen";
+}
+
+<div class="row mb-5">
+    <a class="btn btn-primary btn-lg mb-5" asp-controller="Persoon" asp-action="Index">Terug</a>
+    <hr />
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong">
+        Personeel lijst
+    </button>
+</div>
+
+@if (Model != null)
+{
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Personeel lijst</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    @if (Model.Personen != null)
+                    {
+                        @foreach (var item in Model.Personen)
+                        {
+                            <table>
+                                @using (Html.BeginForm("VerwijderenData", "Persoon", new { @personeelnummer = $"{@item.Personeelnummer}" }, FormMethod.Post))
+                                {
+                                    <input type="submit" class="btn btn-primary btn mb-2" value="@item.Personeelnummer @item.Naam @item.Voornaam">
+                                }
+                                <div class="divider mb-5 mt-5"></div>
+                            </table>
+                        }
+                    }
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+<div class="h-100 d-flex align-items-center justify-content-center">
+    <div class="col">               
+        @using (Html.BeginForm("VerwijderenData", "Persoon", FormMethod.Post))
+        {
+            <div class="@ViewBag.Class @ViewBag.Visibility" role="alert">
+                Niemand gevonden met dit personeelsnummer!
+            </div>
+            <div class="col">
+                <div class="mb-5">
+                    <div class="form-group">
+                        <label class="mr-3">Personeelsnummer: </label>
+                        <input class="mr-3" type="text" name="personeelnummer" />
+                        <input type="submit" value="Gebruiker zoeken" class="btn btn-primary mb-2" />
+                    </div>
+                </div>
+                <div class="PersoneelInfo">
+                    <div class="col">
+                        <div class="row">
+                            <p>Naam: @ViewBag.naam</p>
+                        </div>
+                        <div class="row">
+                            <p>Voornaam: @ViewBag.voornaam</p>
+                        </div>
+                        <div class="row">
+                            <p>Personeelnummer: @ViewBag.personeelnummer</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        }
+        @using (Html.BeginForm("Delete", "Persoon", FormMethod.Post))
+        {
+            <div class="mt-5">
+                <form asp-action="Delete">
+                    <input type="hidden" asp-for="Personeelnummer" />
+                    <input type="submit" value="Gebruiker verwijderen" @ViewBag.Enabled class="btn btn-primary btn-lg mb-2" />
+                </form>
+            </div>
+        }
+    </div>
+</div>

@@ -1,0 +1,18 @@
+﻿@{
+    ViewData["Title"] = "Richtingbeheer";
+}
+
+<a class="btn btn-primary btn-lg mb-5" asp-controller="Home" asp-action="AdminView">Terug</a>
+<hr />
+<div class="h-100 d-flex align-items-center justify-content-center">
+    <div BtnCrud>
+        <div class="col">
+            <div class="mb-5">
+                <a asp-controller="Richting" asp-action="Toevoegen" class="btn btn-primary btn-lg mb-2" role="button">Richting aanmaken</a>
+            </div>
+            <div class="mb-5">
+                <a asp-controller="Richting" asp-action="Overview" class="btn btn-primary btn-lg mb-2" role="button">Richting wijzigen/verwijderen</a>
+            </div>
+        </div>
+    </div>
+</div>

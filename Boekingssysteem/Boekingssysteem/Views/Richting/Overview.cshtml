@@ -1,0 +1,25 @@
+﻿@model Boekingssysteem.ViewModels.RichtingCRUDViewModel
+
+@{
+    ViewData["Title"] = "Overview";
+}
+
+<a class="btn btn-primary btn-lg mb-5" asp-controller="Richting" asp-action="Index">Terug</a>
+<hr />
+
+<table class="table table-bordered table-striped">
+    <tr>
+        <th>@Html.DisplayNameFor(model => model.lijstRichtingen[0].Naam)</th>
+        <th></th>
+        <th></th>
+        <th></th>
+    </tr>
+    @foreach (var functie in Model.lijstRichtingen)
+    {
+        <tr>
+            <td>@functie.Naam</td>
+            <td><a class="button" asp-action="Aanpassen" asp-route-id="@functie.RichtingID">Aanpassen</a></td>
+            <td><a class="button" asp-action="Verwijderen" asp-route-id="@functie.RichtingID">Verwijderen</a></td>
+        </tr>
+    }
+</table>
